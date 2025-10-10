@@ -6,8 +6,7 @@ const COOKIE_OPTIONS = {
   secure: process.env.NODE_ENV === "production",
   sameSite: "Strict",
   maxAge: 7*24*60*60*1000
-};  
-
+};
 
 export const register = async (req,res,next) => {
   try {
