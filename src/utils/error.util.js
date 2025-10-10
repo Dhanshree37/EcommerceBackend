@@ -1,0 +1,10 @@
+export class AppError extends Error {
+  constructor(message, statusCode, details = null) {
+    super(message);
+    this.statusCode = statusCode || 500;
+    this.status = `${statusCode}`.startsWith("4") ? "fail" : "error";
+    this.isOperational = true; // expected errors
+    this.details = details; // optional extra info
+    Error.captureStackTrace(this, this.constructor);
+  }
+}
