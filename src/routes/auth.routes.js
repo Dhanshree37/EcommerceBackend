@@ -1,5 +1,5 @@
 import express from "express";
-import { register, login, refresh, logout } from "../controllers/auth.controller.js";
+import { register, login, refresh, logout, checkAuth } from "../controllers/auth.controller.js";
 import { validateRequest } from "../middlewares/validate.middleware.js";
 import { signupSchema, loginSchema } from "../validations/auth.validation.js";
 
@@ -9,5 +9,7 @@ router.post("/signup", validateRequest(signupSchema), register);
 router.post("/login", validateRequest(loginSchema), login);
 router.post("/refresh-token", refresh);
 router.post("/logout", logout);
+router.get("/check", checkAuth);
+
 
 export default router;

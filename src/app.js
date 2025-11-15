@@ -14,7 +14,7 @@ app.use(express.json());
 app.use(cookieParser());
 
 // Routes
-app.use("/api/auth", authRoutes);
+app.use("/auth", authRoutes);
 
 // Global error handler
 app.use(globalErrorHandler);
